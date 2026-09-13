@@ -133,7 +133,7 @@
 
 <div class="receipt-container">
     <div class="receipt-header">
-        <div class="shop-name">el'sCoffe</div>
+        <div class="shop-name">PPKD Cafe's</div>
         <div class="shop-tagline">Coffee &amp; Good Mood</div>
     </div>
 
@@ -199,8 +199,8 @@
 
     <div class="receipt-footer">
         <div>Terima Kasih Atas Kunjungan Anda</div>
-        <div class="fw-bold" style="margin-top: 4px;">el'sCoffe</div>
-        <div style="font-size: 9px; margin-top: 6px; color: #555;">Nikmati Harimu Bersama Secangkir Kopi Pilihan</div>
+        <div class="fw-bold" style="margin-top: 4px;">PPKD Cafe's</div>
+        {{-- <div style="font-size: 9px; margin-top: 6px; color: #555;">Nikmati Harimu Bersama Secangkir Kopi Pilihan</div> --}}
     </div>
 </div>
 

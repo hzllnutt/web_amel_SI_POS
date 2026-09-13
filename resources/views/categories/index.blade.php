@@ -28,7 +28,7 @@
                         <span class="input-group-text bg-light border-end-0 text-muted">
                             <i class="bi bi-search"></i>
                         </span>
-                        <input type="text" name="search" class="form-control bg-light border-start-0" 
+                        <input type="text" name="search" class="form-control bg-light border-start-0"
                                placeholder="Cari nama kategori..." value="{{ $search }}">
                         @if($search)
                             <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Reset</a>
@@ -60,7 +60,7 @@
                         <td class="fw-bold text-muted">{{ $categories->firstItem() + $index }}</td>
                         <td>
                             <div class="fw-bold text-dark d-flex align-items-center gap-2">
-                                <span class="badge bg-cream text-coffee border border-warning border-opacity-50 px-2 py-1">
+                                <span class="badge bg-black text-coffee border border-warning border-opacity-50 px-2 py-1">
                                     <i class="bi bi-tag-fill me-1"></i> {{ $category->category_name }}
                                 </span>
                             </div>
@@ -74,19 +74,19 @@
                             {{ $category->created_at ? $category->created_at->format('d M Y, H:i') : '-' }}
                         </td>
                         <td class="text-end">
-                            <button type="button" class="btn btn-sm btn-outline-warning text-dark me-1" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#editCategoryModal" 
-                                    data-id="{{ $category->id }}" 
+                            <button type="button" class="btn btn-sm btn-outline-warning text-dark me-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editCategoryModal"
+                                    data-id="{{ $category->id }}"
                                     data-name="{{ $category->category_name }}"
                                     title="Edit Kategori">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
-                            
+
                             <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="btn btn-sm btn-outline-danger btn-delete-confirm" 
+                                <button type="button" class="btn btn-sm btn-outline-danger btn-delete-confirm"
                                         data-name="kategori '{{ $category->category_name }}'"
                                         title="Hapus Kategori">
                                     <i class="bi bi-trash"></i>
@@ -129,7 +129,7 @@
                 <div class="modal-body p-4">
                     <div class="mb-3">
                         <label for="category_name" class="form-label fw-semibold">Nama Kategori <span class="text-danger">*</span></label>
-                        <input type="text" name="category_name" id="category_name" class="form-control" 
+                        <input type="text" name="category_name" id="category_name" class="form-control"
                                placeholder="Contoh: Signature Coffee" required autofocus>
                     </div>
                 </div>

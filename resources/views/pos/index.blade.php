@@ -55,7 +55,7 @@
                 <h6 class="fw-bold mb-0 text-coffee">Pesanan Pelanggan</h6>
             </div>
             <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-cream text-coffee border" id="cartItemsCount">0 Item</span>
+                <span class="badge bg-dark text-white border" id="cartItemsCount">0 Item</span>
                 <button type="button" class="btn btn-sm btn-outline-danger" id="btnClearCart" title="Kosongkan Keranjang">
                     <i class="bi bi-trash"></i>
                 </button>

@@ -28,15 +28,15 @@
                 <div class="col-12 col-md-3">
                     <label class="form-label small fw-semibold text-muted mb-1">Pilih Jenis Periode</label>
                     <div class="btn-group w-100" role="group">
-                        <a href="{{ route('reports.sales', ['period' => 'daily', 'date' => $date]) }}" 
+                        <a href="{{ route('reports.sales', ['period' => 'daily', 'date' => $date]) }}"
                            class="btn btn-sm {{ $period === 'daily' ? 'btn-coffee' : 'btn-outline-coffee' }}">
                            Harian
                         </a>
-                        <a href="{{ route('reports.sales', ['period' => 'weekly']) }}" 
+                        <a href="{{ route('reports.sales', ['period' => 'weekly']) }}"
                            class="btn btn-sm {{ $period === 'weekly' ? 'btn-coffee' : 'btn-outline-coffee' }}">
                            Mingguan
                         </a>
-                        <a href="{{ route('reports.sales', ['period' => 'monthly', 'month' => $month, 'year' => $year]) }}" 
+                        <a href="{{ route('reports.sales', ['period' => 'monthly', 'month' => $month, 'year' => $year]) }}"
                            class="btn btn-sm {{ $period === 'monthly' ? 'btn-coffee' : 'btn-outline-coffee' }}">
                            Bulanan
                         </a>
@@ -216,7 +216,7 @@
                         <td class="text-end text-muted">{{ $order->formatted_tax }}</td>
                         <td class="text-end fw-bold text-coffee">{{ $order->formatted_amount }}</td>
                         <td class="text-center">
-                            <span class="badge bg-light text-uppercase border text-coffee px-2 py-1">
+                            <span class="badge bg-black text-uppercase border text-coffee px-2 py-1">
                                 {{ $order->payment_method }}
                             </span>
                         </td>

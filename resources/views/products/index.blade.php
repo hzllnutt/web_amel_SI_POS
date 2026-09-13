@@ -9,13 +9,13 @@
     <div class="card border-0 shadow-sm mb-4">
         <div class="card-body p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
             <div>
-                <h5 class="fw-bold text-coffee mb-1">Katalog Produk & Menu</h5>
-                <p class="text-muted small mb-0">Kelola item minuman, makanan, harga, serta ketersediaan stok.</p>
+                <h5 class="fw-bold text-coffee mb-1">Catalogue Product & Menu</h5>
+                {{-- <p class="text-muted small mb-0">Kelola item minuman, makanan, harga, serta ketersediaan stok.</p> --}}
             </div>
             @if(auth()->check() && auth()->user()->isAdmin())
             <a href="{{ route('products.create') }}" class="btn btn-coffee d-inline-flex align-items-center gap-2">
                 <i class="bi bi-plus-circle"></i>
-                <span>Tambah Produk</span>
+                <span>Add Product</span>
             </a>
             @endif
         </div>
@@ -30,7 +30,7 @@
                         <span class="input-group-text bg-light border-end-0 text-muted">
                             <i class="bi bi-search"></i>
                         </span>
-                        <input type="text" name="search" class="form-control bg-light border-start-0" 
+                        <input type="text" name="search" class="form-control bg-light border-start-0"
                                placeholder="Cari nama produk..." value="{{ $search }}">
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <tr>
                         <td class="fw-bold text-muted">{{ $products->firstItem() + $index }}</td>
                         <td>
-                            <img src="{{ $product->photo_url }}" alt="{{ $product->product_name }}" 
+                            <img src="{{ $product->photo_url }}" alt="{{ $product->product_name }}"
                                  class="rounded border" style="width: 56px; height: 56px; object-fit: cover;">
                         </td>
                         <td>
@@ -139,7 +139,7 @@
                             <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="btn btn-sm btn-outline-danger btn-delete-confirm" 
+                                <button type="button" class="btn btn-sm btn-outline-danger btn-delete-confirm"
                                         data-name="produk '{{ $product->product_name }}'"
                                         title="Hapus Produk">
                                     <i class="bi bi-trash"></i>

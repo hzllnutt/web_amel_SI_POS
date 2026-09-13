@@ -11,12 +11,12 @@
             <div>
                 <span class="badge bg-warning text-dark px-3 py-1 mb-2 fw-semibold">PPKD Cafe's</span>
                 <h3 class="fw-bold mb-1">Halo, {{ auth()->user()->name }}! ☕</h3>
-                <p class="mb-0 text-white-50">Berikut adalah ikhtisar performa penjualan dan inventaris toko Anda hari ini.</p>
+                {{-- <p class="mb-0 text-white-50">Berikut adalah ikhtisar performa penjualan dan inventaris toko Anda hari ini.</p> --}}
             </div>
             <div>
                 <a href="{{ route('pos.index') }}" class="btn btn-gold btn-lg px-4 d-inline-flex align-items-center gap-2 shadow">
                     <i class="bi bi-calculator-fill fs-5"></i>
-                    <span>Buka Kasir (POS)</span>
+                    <span>Cashier (POS)</span>
                 </a>
             </div>
         </div>
@@ -25,7 +25,7 @@
     <!-- 6 Summary Stat Cards -->
     <div class="row g-3 mb-4">
         <!-- Card 1: Penjualan Hari Ini -->
-        <div class="col-12 col-sm-6 col-xl-4">
+        <div class="col-12 col-md-6">
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Card 2: Transaksi Hari Ini -->
-        <div class="col-12 col-sm-6 col-xl-4">
+        {{-- <div class="col-12 col-sm-6 col-xl-4">
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
@@ -56,10 +56,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Card 3: Penjualan Bulan Ini -->
-        <div class="col-12 col-sm-6 col-xl-4">
+        <div class="col-12 col-md-6">
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
@@ -77,11 +77,11 @@
         </div>
 
         <!-- Card 4: Total Produk -->
-        <div class="col-12 col-sm-6 col-xl-4">
+        <div class="col-12 col-md-6">
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <span class="text-muted small fw-semibold">Total Produk Menu</span>
+                        <span class="text-muted small fw-semibold">Total Produk</span>
                         <h4 class="fw-bold text-coffee mb-0 mt-1">{{ number_format($totalProducts) }} Menu</h4>
                         <a href="{{ route('products.index') }}" class="small text-decoration-none text-coffee fw-semibold mt-2 d-inline-block">
                             Lihat Menu &rarr;
@@ -95,7 +95,7 @@
         </div>
 
         <!-- Card 5: Total Kategori -->
-        <div class="col-12 col-sm-6 col-xl-4">
+        <div class="col-12 col-md-6">
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
@@ -113,7 +113,7 @@
         </div>
 
         <!-- Card 6: Stok Rendah -->
-        <div class="col-12 col-sm-6 col-xl-4">
+        {{-- <div class="col-12 col-sm-6 col-xl-4">
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
@@ -126,11 +126,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <!-- Charts Section -->
-    <div class="row g-4 mb-4">
+    {{-- <div class="row g-4 mb-4">
         <!-- 7 Days Sales Line Chart -->
         <div class="col-12 col-lg-8">
             <div class="card border-0 h-100 shadow-sm">
@@ -187,7 +187,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Recent Orders Table -->
     <div class="card border-0 shadow-sm">
