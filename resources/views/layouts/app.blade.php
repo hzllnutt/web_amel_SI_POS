@@ -30,7 +30,7 @@
 <body>
 <div class="app-wrapper">
     <!-- Desktop Sidebar -->
-    <aside class="sidebar d-none d-lg-flex">
+    <aside class="sidebar d-none d-lg-flex no-print">
         <a href="{{ route('dashboard') }}" class="sidebar-brand">
             <div class="sidebar-brand-icon">
                 <i class="bi bi-cup-hot-fill"></i>
@@ -103,7 +103,7 @@
     </aside>
 
     <!-- Mobile Offcanvas Sidebar -->
-    <div class="offcanvas offcanvas-start bg-dark text-light" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+    <div class="offcanvas offcanvas-start bg-dark text-light no-print" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
         <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
             <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileSidebarLabel">
                 <i class="bi bi-cup-hot-fill text-warning"></i>
@@ -179,7 +179,7 @@
     <!-- Main Content Area -->
     <div class="main-content">
         <!-- Top Navbar -->
-        <header class="top-navbar">
+        <header class="top-navbar no-print">
             <div class="d-flex align-items-center gap-3">
                 <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
                     <i class="bi bi-list fs-5"></i>

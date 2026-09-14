@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struk Pembayaran - {{ $order->order_code }}</title>
+    <title>Payment Receipt - {{ $order->order_code }}</title>
     <style>
         * {
             box-sizing: border-box;
@@ -124,10 +124,10 @@
 
 <div class="actions-bar">
     <button class="btn" onclick="window.print()">
-        &#128438; Cetak Struk Sekarang
+        &#128438; Print the receipt now
     </button>
     <a href="{{ route('pos.index') }}" class="btn btn-secondary">
-        &larr; Kembali ke POS
+        &larr; Back to Cashier (POS)
     </a>
 </div>
 
@@ -174,7 +174,7 @@
             <td class="text-right">Rp{{ number_format($order->order_subtotal, 0, ',', '.') }}</td>
         </tr>
         <tr>
-            <td>Pajak (11%)</td>
+            <td>Tax (11%)</td>
             <td class="text-right">Rp{{ number_format($order->order_tax, 0, ',', '.') }}</td>
         </tr>
         <tr style="border-top: 1px dashed #333;">
@@ -182,11 +182,11 @@
             <td class="text-right fw-bold" style="font-size: 13px; padding-top: 4px;">Rp{{ number_format($order->order_amount, 0, ',', '.') }}</td>
         </tr>
         <tr>
-            <td>Bayar</td>
+            <td>Pay</td>
             <td class="text-right">Rp{{ number_format($order->order_paid, 0, ',', '.') }}</td>
         </tr>
         <tr>
-            <td>Kembali</td>
+            <td>Change</td>
             <td class="text-right">Rp{{ number_format($order->order_change, 0, ',', '.') }}</td>
         </tr>
         <tr>
@@ -198,7 +198,7 @@
     <div class="divider"></div>
 
     <div class="receipt-footer">
-        <div>Terima Kasih Atas Kunjungan Anda</div>
+        <div>Thank You For Your Visit</div>
         <div class="fw-bold" style="margin-top: 4px;">PPKD Cafe's</div>
         {{-- <div style="font-size: 9px; margin-top: 6px; color: #555;">Nikmati Harimu Bersama Secangkir Kopi Pilihan</div> --}}
     </div>

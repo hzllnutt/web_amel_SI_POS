@@ -10,7 +10,7 @@
         <div class="card-body p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
             <div>
                 <span class="badge bg-warning text-dark px-3 py-1 mb-2 fw-semibold">PPKD Cafe's</span>
-                <h3 class="fw-bold mb-1">Halo, {{ auth()->user()->name }}! ☕</h3>
+                <h3 class="fw-bold mb-1">Welcome, {{ auth()->user()->name }}! ☕</h3>
                 {{-- <p class="mb-0 text-white-50">Berikut adalah ikhtisar performa penjualan dan inventaris toko Anda hari ini.</p> --}}
             </div>
             <div>
@@ -29,7 +29,7 @@
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <span class="text-muted small fw-semibold">Penjualan Hari Ini</span>
+                        <span class="text-muted small fw-semibold">Today's Sale</span>
                         <h4 class="fw-bold text-coffee mb-0 mt-1">Rp {{ number_format($todaySales, 0, ',', '.') }}</h4>
                         <span class="badge bg-success bg-opacity-10 text-success mt-2 small">
                             <i class="bi bi-calendar-check me-1"></i> {{ now()->translatedFormat('d F Y') }}
@@ -63,10 +63,10 @@
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <span class="text-muted small fw-semibold">Penjualan Bulan Ini</span>
+                        <span class="text-muted small fw-semibold">Month's Sales</span>
                         <h4 class="fw-bold text-coffee mb-0 mt-1">Rp {{ number_format($monthSales, 0, ',', '.') }}</h4>
                         <span class="badge bg-info bg-opacity-10 text-info mt-2 small">
-                            <i class="bi bi-graph-up me-1"></i> Bulan {{ now()->translatedFormat('F Y') }}
+                            <i class="bi bi-graph-up me-1"></i> Month {{ now()->translatedFormat('F Y') }}
                         </span>
                     </div>
                     <div class="stat-icon bg-info bg-opacity-10 text-info">
@@ -81,10 +81,10 @@
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <span class="text-muted small fw-semibold">Total Produk</span>
+                        <span class="text-muted small fw-semibold">Total Product</span>
                         <h4 class="fw-bold text-coffee mb-0 mt-1">{{ number_format($totalProducts) }} Menu</h4>
                         <a href="{{ route('products.index') }}" class="small text-decoration-none text-coffee fw-semibold mt-2 d-inline-block">
-                            Lihat Menu &rarr;
+                            Menu &rarr;
                         </a>
                     </div>
                     <div class="stat-icon bg-warning bg-opacity-10 text-warning">
@@ -99,10 +99,10 @@
             <div class="card stat-card border-0 h-100" style="background: #FFFFFF;">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <span class="text-muted small fw-semibold">Total Kategori</span>
-                        <h4 class="fw-bold text-coffee mb-0 mt-1">{{ number_format($totalCategories) }} Kategori</h4>
+                        <span class="text-muted small fw-semibold">Total Category</span>
+                        <h4 class="fw-bold text-coffee mb-0 mt-1">{{ number_format($totalCategories) }} Category</h4>
                         <a href="{{ route('categories.index') }}" class="small text-decoration-none text-coffee fw-semibold mt-2 d-inline-block">
-                            Lihat Kategori &rarr;
+                            Category &rarr;
                         </a>
                     </div>
                     <div class="stat-icon bg-secondary bg-opacity-10 text-secondary">
@@ -193,10 +193,10 @@
     <div class="card border-0 shadow-sm">
         <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
             <h6 class="fw-bold text-coffee mb-0">
-                <i class="bi bi-clock-history me-2 text-gold"></i>Transaksi Terbaru
+                <i class="bi bi-clock-history me-2 text-gold"></i>Latest Transaction
             </h6>
             <a href="{{ route('orders.index') }}" class="btn btn-sm btn-outline-coffee">
-                Lihat Semua Transaksi &rarr;
+                All Transaction &rarr;
             </a>
         </div>
         <div class="table-responsive">
@@ -204,12 +204,12 @@
                 <thead>
                     <tr>
                         <th>Invoice</th>
-                        <th>Tanggal</th>
-                        <th>Kasir</th>
+                        <th>Date</th>
+                        <th>Cashier</th>
                         <th>Total</th>
                         <th>Payment</th>
                         <th>Status</th>
-                        <th class="text-end">Aksi</th>
+                        <th class="text-end">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -257,7 +257,7 @@
                     <tr>
                         <td colspan="7" class="text-center py-4 text-muted">
                             <i class="bi bi-receipt-cutoff fs-2 d-block mb-2"></i>
-                            Belum ada transaksi tercatat. Mulai buat transaksi di menu Kasir (POS).
+                            No transaction has been recorded yet. Start transactions in the Cashier (POS).
                         </td>
                     </tr>
                     @endforelse

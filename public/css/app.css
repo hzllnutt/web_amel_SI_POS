@@ -462,24 +462,102 @@ body {
 }
 
 @media print {
-  body * {
-    visibility: hidden;
+  /* Hide all non-printable elements */
+  .no-print,
+  .sidebar,
+  .top-navbar,
+  .offcanvas,
+  nav,
+  .btn,
+  button,
+  form,
+  .modal,
+  .dropdown,
+  .actions-bar {
+    display: none !important;
   }
-  .print-area, .print-area * {
-    visibility: visible;
+
+  /* Reset body and container layouts for paper */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow: visible !important;
   }
-  .print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+
+  .app-wrapper,
+  .main-content,
+  main,
+  .container,
+  .container-fluid {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .card {
     border: none !important;
     box-shadow: none !important;
+    background: transparent !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
   }
-  .no-print {
+
+  .card-body, .card-header, .card-footer {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* Table styling for print */
+  .table-responsive {
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  table tr {
+    page-break-inside: avoid !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .d-print-none {
     display: none !important;
+  }
+
+  .d-print-block {
+    display: block !important;
+  }
+
+  .d-print-flex {
+    display: flex !important;
+  }
+
+  .d-print-table-row {
+    display: table-row !important;
   }
 }
 

@@ -9,12 +9,12 @@
     <div class="card border-0 shadow-sm mb-4">
         <div class="card-body p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
             <div>
-                <h5 class="fw-bold text-coffee mb-1">Riwayat Transaksi Penjualan</h5>
-                <p class="text-muted small mb-0">Semua riwayat pesanan dan struk kasir tersimpan di sini.</p>
+                <h5 class="fw-bold text-coffee mb-1">Sales Transaction History</h5>
+                {{-- <p class="text-muted small mb-0"></p> --}}
             </div>
             <a href="{{ route('pos.index') }}" class="btn btn-coffee d-inline-flex align-items-center gap-2">
                 <i class="bi bi-plus-circle"></i>
-                <span>Transaksi Baru di POS</span>
+                <span>New Transaction in Cashier (POS)</span>
             </a>
         </div>
     </div>
@@ -28,8 +28,8 @@
                         <span class="input-group-text bg-light border-end-0 text-muted">
                             <i class="bi bi-search"></i>
                         </span>
-                        <input type="text" name="search" class="form-control bg-light border-start-0" 
-                               placeholder="Cari nomor invoice..." value="{{ $search }}">
+                        <input type="text" name="search" class="form-control bg-light border-start-0"
+                               placeholder="Search invoice..." value="{{ $search }}">
                     </div>
                 </div>
 
@@ -39,17 +39,17 @@
 
                 <div class="col-6 col-md-2">
                     <select name="payment_method" class="form-select bg-light">
-                        <option value="">-- Semua Metode --</option>
+                        <option value="">-- All Methods --</option>
                         <option value="cash" {{ $payment === 'cash' ? 'selected' : '' }}>Cash</option>
                         <option value="qris" {{ $payment === 'qris' ? 'selected' : '' }}>QRIS</option>
-                        <option value="debit" {{ $payment === 'debit' ? 'selected' : '' }}>Debit</option>
-                        <option value="ewallet" {{ $payment === 'ewallet' ? 'selected' : '' }}>E-Wallet</option>
+                        {{-- <option value="debit" {{ $payment === 'debit' ? 'selected' : '' }}>Debit</option>
+                        <option value="ewallet" {{ $payment === 'ewallet' ? 'selected' : '' }}>E-Wallet</option> --}}
                     </select>
                 </div>
 
                 <div class="col-6 col-md-2">
                     <select name="order_status" class="form-select bg-light">
-                        <option value="">-- Semua Status --</option>
+                        <option value="">-- All Status --</option>
                         <option value="completed" {{ $status === 'completed' ? 'selected' : '' }}>Completed</option>
                         <option value="cancelled" {{ $status === 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                     </select>
@@ -77,12 +77,12 @@
                     <tr>
                         <th style="width: 50px;">No</th>
                         <th>Order Code</th>
-                        <th>Tanggal & Waktu</th>
-                        <th>Kasir</th>
+                        <th>Date & Time</th>
+                        <th>Cashier</th>
                         <th>Total</th>
                         <th>Payment Method</th>
                         <th>Status</th>
-                        <th class="text-end" style="width: 140px;">Aksi</th>
+                        <th class="text-end" style="width: 140px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -131,7 +131,7 @@
                     <tr>
                         <td colspan="8" class="text-center py-5 text-muted">
                             <i class="bi bi-receipt fs-1 d-block mb-2"></i>
-                            Tidak ada data transaksi yang sesuai filter.
+                            There's no transaction that matches the filter.
                         </td>
                     </tr>
                     @endforelse

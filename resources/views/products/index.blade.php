@@ -31,13 +31,13 @@
                             <i class="bi bi-search"></i>
                         </span>
                         <input type="text" name="search" class="form-control bg-light border-start-0"
-                               placeholder="Cari nama produk..." value="{{ $search }}">
+                               placeholder="Search product..." value="{{ $search }}">
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
                     <select name="category_id" class="form-select bg-light">
-                        <option value="">-- Semua Kategori --</option>
+                        <option value="">-- All Category --</option>
                         @foreach($categories as $cat)
                             <option value="{{ $cat->id }}" {{ $categoryId == $cat->id ? 'selected' : '' }}>
                                 {{ $cat->category_name }}
@@ -48,9 +48,9 @@
 
                 <div class="col-6 col-md-3">
                     <select name="status" class="form-select bg-light">
-                        <option value="">-- Semua Status --</option>
-                        <option value="1" {{ $status === '1' ? 'selected' : '' }}>Aktif</option>
-                        <option value="0" {{ $status === '0' ? 'selected' : '' }}>Non-Aktif</option>
+                        <option value="">-- All Status --</option>
+                        <option value="1" {{ $status === '1' ? 'selected' : '' }}>Active</option>
+                        <option value="0" {{ $status === '0' ? 'selected' : '' }}>Non-Active</option>
                     </select>
                 </div>
 
@@ -75,13 +75,13 @@
                 <thead>
                     <tr>
                         <th style="width: 50px;">No</th>
-                        <th style="width: 80px;">Foto</th>
-                        <th>Nama Produk</th>
-                        <th>Kategori</th>
-                        <th>Harga</th>
-                        <th>Stok</th>
+                        <th style="width: 80px;">Photo</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
                         <th>Status</th>
-                        <th class="text-end" style="width: 160px;">Aksi</th>
+                        <th class="text-end" style="width: 160px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -109,7 +109,7 @@
                         <td>
                             <span class="badge {{ $product->stock_badge_class }} px-2 py-1">
                                 @if($product->product_stock <= 0)
-                                    <i class="bi bi-x-circle me-1"></i> Habis (0)
+                                    <i class="bi bi-x-circle me-1"></i> Sold (0)
                                 @elseif($product->product_stock <= 5)
                                     <i class="bi bi-exclamation-triangle me-1"></i> Sisa {{ $product->product_stock }}
                                 @else
@@ -120,11 +120,11 @@
                         <td>
                             @if($product->is_active)
                                 <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">
-                                    Aktif
+                                    Active
                                 </span>
                             @else
                                 <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 px-2 py-1">
-                                    Nonaktif
+                                    Non-Active
                                 </span>
                             @endif
                         </td>
@@ -152,7 +152,7 @@
                     <tr>
                         <td colspan="8" class="text-center py-5 text-muted">
                             <i class="bi bi-cup-hot fs-1 d-block mb-2"></i>
-                            Tidak ada data produk ditemukan.
+                            No product data found.
                         </td>
                     </tr>
                     @endforelse

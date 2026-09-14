@@ -1,7 +1,9 @@
-@extends('layouts.app') // Menggunakan layout utama aplikasi.
-
-@section('title', 'Manajemen User') // Judul halaman pada tab browser.
-@section('page_title', 'Manajemen Pengguna & Hak Akses') // Judul yang tampil di halaman.
+{{-- // Menggunakan layout utama aplikasi. --}}
+@extends('layouts.app')
+{{-- // Judul halaman pada tab browser. --}}
+@section('title', 'Manajemen User')
+{{-- // Judul yang tampil di halaman. --}}
+@section('page_title', 'Manajemen Pengguna & Hak Akses')
 
 @section('content')
 <div class="container-fluid p-0">

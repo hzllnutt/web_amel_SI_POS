@@ -10,7 +10,7 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center">
                     <h6 class="fw-bold text-coffee mb-0">
-                        <i class="bi bi-pencil-square me-2 text-gold"></i>Edit Produk: {{ $product->product_name }}
+                        <i class="bi bi-pencil-square me-2 text-gold"></i>Edit Product: {{ $product->product_name }}
                     </h6>
                     <a href="{{ route('products.index') }}" class="btn btn-sm btn-outline-secondary">
                         <i class="bi bi-arrow-left me-1"></i> Kembali
@@ -23,9 +23,9 @@
                     <div class="card-body p-4">
                         <div class="row g-3">
                             <div class="col-12 col-md-8">
-                                <label for="product_name" class="form-label fw-semibold">Nama Produk <span class="text-danger">*</span></label>
-                                <input type="text" name="product_name" id="product_name" 
-                                       class="form-control @error('product_name') is-invalid @enderror" 
+                                <label for="product_name" class="form-label fw-semibold">Product Name <span class="text-danger">*</span></label>
+                                <input type="text" name="product_name" id="product_name"
+                                       class="form-control @error('product_name') is-invalid @enderror"
                                        value="{{ old('product_name', $product->product_name) }}" required>
                                 @error('product_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -51,8 +51,8 @@
                                 <label for="product_price" class="form-label fw-semibold">Harga (Rp) <span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light">Rp</span>
-                                    <input type="number" name="product_price" id="product_price" 
-                                           class="form-control @error('product_price') is-invalid @enderror" 
+                                    <input type="number" name="product_price" id="product_price"
+                                           class="form-control @error('product_price') is-invalid @enderror"
                                            value="{{ old('product_price', (int) $product->product_price) }}" min="0" step="500" required>
                                 </div>
                                 @error('product_price')
@@ -62,8 +62,8 @@
 
                             <div class="col-12 col-md-6">
                                 <label for="product_stock" class="form-label fw-semibold">Stok Saat Ini <span class="text-danger">*</span></label>
-                                <input type="number" name="product_stock" id="product_stock" 
-                                       class="form-control @error('product_stock') is-invalid @enderror" 
+                                <input type="number" name="product_stock" id="product_stock"
+                                       class="form-control @error('product_stock') is-invalid @enderror"
                                        value="{{ old('product_stock', $product->product_stock) }}" min="0" required>
                                 <div class="form-text small">Admin dapat mengubah stok langsung di sini.</div>
                                 @error('product_stock')
@@ -73,7 +73,7 @@
 
                             <div class="col-12">
                                 <label for="product_description" class="form-label fw-semibold">Deskripsi Menu</label>
-                                <textarea name="product_description" id="product_description" rows="3" 
+                                <textarea name="product_description" id="product_description" rows="3"
                                           class="form-control @error('product_description') is-invalid @enderror">{{ old('product_description', $product->product_description) }}</textarea>
                                 @error('product_description')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -82,8 +82,8 @@
 
                             <div class="col-12 col-md-6">
                                 <label for="product_photo_input" class="form-label fw-semibold">Ganti Foto Produk</label>
-                                <input type="file" name="product_photo" id="product_photo_input" 
-                                       class="form-control @error('product_photo') is-invalid @enderror" 
+                                <input type="file" name="product_photo" id="product_photo_input"
+                                       class="form-control @error('product_photo') is-invalid @enderror"
                                        accept="image/*">
                                 <div class="form-text small">Biarkan kosong jika tidak ingin mengganti foto saat ini.</div>
                                 @error('product_photo')
@@ -93,7 +93,7 @@
 
                             <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                                 <div class="text-center p-2 border rounded bg-light" style="width: 140px; height: 140px;">
-                                    <img id="product_photo_preview" src="{{ $product->photo_url }}" 
+                                    <img id="product_photo_preview" src="{{ $product->photo_url }}"
                                          alt="Preview Foto" class="rounded w-100 h-100" style="object-fit: cover;">
                                 </div>
                             </div>

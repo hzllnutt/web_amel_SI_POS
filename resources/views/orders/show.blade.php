@@ -24,29 +24,29 @@
                             @endif
                         </div>
                         <p class="text-muted small mb-0">
-                            Waktu Transaksi: {{ $order->order_date->translatedFormat('d F Y, H:i') }} WIB &middot; Kasir: <strong>{{ $order->user->name ?? 'Kasir' }}</strong>
+                            Transaction Time: {{ $order->order_date->translatedFormat('d F Y, H:i') }} WIB &middot; Cashier: <strong>{{ $order->user->name ?? 'Kasir' }}</strong>
                         </p>
                     </div>
 
                     <div class="d-flex gap-2">
                         <a href="{{ route('orders.receipt', $order->id) }}" target="_blank" class="btn btn-coffee d-inline-flex align-items-center gap-2">
                             <i class="bi bi-printer"></i>
-                            <span>Cetak Struk</span>
+                            <span>Print Receipt</span>
                         </a>
 
                         @if($order->order_status === 'completed')
                         <form action="{{ route('orders.cancel', $order->id) }}" method="POST" class="d-inline">
                             @csrf
-                            <button type="button" class="btn btn-outline-danger btn-cancel-order d-inline-flex align-items-center gap-1" 
+                            <button type="button" class="btn btn-outline-danger btn-cancel-order d-inline-flex align-items-center gap-1"
                                     data-code="{{ $order->order_code }}">
                                 <i class="bi bi-x-circle"></i>
-                                <span>Batalkan Transaksi</span>
+                                <span>Cancel the Transaction</span>
                             </button>
                         </form>
                         @endif
 
                         <a href="{{ route('orders.index') }}" class="btn btn-outline-secondary">
-                            <i class="bi bi-arrow-left me-1"></i> Kembali
+                            <i class="bi bi-arrow-left me-1"></i> Back
                         </a>
                     </div>
                 </div>
@@ -64,10 +64,10 @@
                         <thead>
                             <tr>
                                 <th style="width: 50px;">No</th>
-                                <th>Produk Menu</th>
-                                <th>Kategori</th>
-                                <th class="text-end">Harga Satuan</th>
-                                <th class="text-center">Jumlah (Qty)</th>
+                                <th>Product Menu</th>
+                                <th>Category</th>
+                                <th class="text-end">Unit Price</th>
+                                <th class="text-center">Quantity</th>
                                 <th class="text-end">Subtotal</th>
                             </tr>
                         </thead>
@@ -77,8 +77,8 @@
                                 <td class="fw-bold text-muted">{{ $index + 1 }}</td>
                                 <td>
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="{{ $detail->product->photo_url ?? asset('images/default-coffee.svg') }}" 
-                                             alt="{{ $detail->product->product_name ?? 'Produk' }}" 
+                                        <img src="{{ $detail->product->photo_url ?? asset('images/default-coffee.svg') }}"
+                                             alt="{{ $detail->product->product_name ?? 'Produk' }}"
                                              class="rounded border" style="width: 44px; height: 44px; object-fit: cover;">
                                         <div>
                                             <span class="fw-bold text-dark d-block">{{ $detail->product->product_name ?? 'Produk Dihapus' }}</span>

@@ -77,14 +77,14 @@ class OrderController extends Controller
             $startOfWeek = Carbon::now()->startOfWeek();
             $endOfWeek = Carbon::now()->endOfWeek();
             $query->whereBetween('order_date', [$startOfWeek, $endOfWeek]);
-            $periodTitle = 'Minggu Ini (' . $startOfWeek->translatedFormat('d M Y') . ' - ' . $endOfWeek->translatedFormat('d M Y') . ')';
+            $periodTitle = 'This Week (' . $startOfWeek->translatedFormat('d M Y') . ' - ' . $endOfWeek->translatedFormat('d M Y') . ')';
         } elseif ($period === 'monthly') {
             $query->whereYear('order_date', $year)->whereMonth('order_date', $month);
-            $periodTitle = 'Bulan ' . Carbon::create($year, $month, 1)->translatedFormat('F Y');
+            $periodTitle = '' . Carbon::create($year, $month, 1)->translatedFormat('F Y');
         } else {
             // daily
             $query->whereDate('order_date', $date);
-            $periodTitle = 'Hari ' . Carbon::parse($date)->translatedFormat('l, d F Y');
+            $periodTitle = '' . Carbon::parse($date)->translatedFormat('l, d F Y');
         }
 
         // Summary Statistics

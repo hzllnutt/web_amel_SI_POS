@@ -13,7 +13,7 @@
                         <i class="bi bi-info-circle-fill me-2 text-gold"></i>Detail Menu: {{ $product->product_name }}
                     </h6>
                     <a href="{{ route('products.index') }}" class="btn btn-sm btn-outline-secondary">
-                        <i class="bi bi-arrow-left me-1"></i> Kembali ke Daftar
+                        <i class="bi bi-arrow-left me-1"></i> Back to menu list
                     </a>
                 </div>
 
@@ -21,7 +21,7 @@
                     <div class="row g-4 align-items-center">
                         <div class="col-12 col-md-5 text-center">
                             <div class="p-2 border rounded-4 bg-light shadow-sm d-inline-block">
-                                <img src="{{ $product->photo_url }}" alt="{{ $product->product_name }}" 
+                                <img src="{{ $product->photo_url }}" alt="{{ $product->product_name }}"
                                      class="rounded-3 img-fluid" style="max-height: 240px; object-fit: cover;">
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                                 <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-outline-danger btn-delete-confirm" 
+                                    <button type="button" class="btn btn-outline-danger btn-delete-confirm"
                                             data-name="produk '{{ $product->product_name }}'">
                                         <i class="bi bi-trash me-1"></i> Hapus
                                     </button>
